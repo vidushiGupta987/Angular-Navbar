@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar-Angular</title>
+    <link rel="stylesheet" href="style.css">
+    <!--angularJS CDN-->
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<!--ng-app directive used to define the root element-->
+<body ng-app>
+        <!--The navigation will get the value of the "active" variable as a class. 
+        preventDefault() is used here to stop the page from jumping when the link is clicked-->
+    <nav class="{{active}}"  ng-click="$event.preventDefault()">
+
+
+        <a href="#" class="home" ng-click="active='home'">Home</a>
+        <a href="#" class="register" ng-click="active='register'">Register</a>
+        <a href="#" class="login" ng-click="active='login'">Login</a>
+        <a href="#" class="contact" ng-click="active='contact'">Contact</a>
+    </nav>
+    <!-- content displayed when link is clicked-->
+      <p class="mt-4" ng-show="active" style="text-align: center;">You chose <b>{{active}}</b></p>
+   
+</body>
+</html>
